@@ -157,8 +157,13 @@ pipenv run pytest tests/ -v --cov=server --cov=client --cov-report=html
 Open htmlcov/index.html in a browser to view coverage.
 
 📺 Demo (Optional)
+Gif: 
 
 Screenshots:
+
+https://github.com/user-attachments/assets/a37a9024-0294-4549-a2ba-cbcfc7cb4442
+
+
 
 GUI chat window
 
