@@ -1,3 +1,4 @@
+# server.py
 import socket
 import threading
 import sys
@@ -7,7 +8,6 @@ class ChatServer:
         self.host = host
         self.port = port
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # 👇 Allow quick restart on same port
         self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.clients = {}  # {conn: username}
         self.lock = threading.Lock()
@@ -19,18 +19,14 @@ class ChatServer:
             print(f"✅ Server started on {self.host}:{self.port}")
 
             while True:
-                try:
-                    conn, addr = self.server_socket.accept()
-                    print(f"🔗 New connection from {addr}")
-                    threading.Thread(target=self.handle_client, args=(conn,), daemon=True).start()
-                except Exception as e:
-                    print(f"⚠️ Accept error: {e}")
+                conn, addr = self.server_socket.accept()
+                print(f"🔗 New connection from {addr}")
+                threading.Thread(target=self.handle_client, args=(conn,), daemon=True).start()
         except Exception as e:
-            print(f"❌ Server failed to start: {e}")
+            print(f"❌ Server failed: {e}")
             sys.exit(1)
 
     def broadcast(self, msg, sender_conn=None):
-        """Send message to all connected clients except the sender."""
         with self.lock:
             disconnected = []
             for conn in list(self.clients.keys()):
@@ -41,11 +37,9 @@ class ChatServer:
                         disconnected.append(conn)
             for conn in disconnected:
                 conn.close()
-                if conn in self.clients:
-                    del self.clients[conn]
+                self.clients.pop(conn, None)
 
     def send_userlist(self):
-        """Send updated user list to all clients."""
         with self.lock:
             users = ",".join(self.clients.values())
             for conn in list(self.clients.keys()):
@@ -81,8 +75,7 @@ class ChatServer:
         finally:
             with self.lock:
                 username = self.clients.get(conn, "Unknown")
-                if conn in self.clients:
-                    del self.clients[conn]
+                self.clients.pop(conn, None)
 
             print(f"❌ {username} disconnected")
             self.broadcast(f"❌ {username} left the chat.", conn)
@@ -95,5 +88,5 @@ if __name__ == "__main__":
     try:
         server.start()
     except KeyboardInterrupt:
-        print("\n🛑 Server shutting down manually...")
+        print("\n🛑 Server shutting down...")
         sys.exit(0)
