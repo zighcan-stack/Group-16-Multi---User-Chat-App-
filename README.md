@@ -1,211 +1,215 @@
-💬 Multi-User Chat App
-📖 Project Summary
+Perfect 🚀 I’ll reformat everything properly in **Markdown** so you can just copy-paste it into your `README.md` on GitHub.
+I’ll make sure commands and code are in code blocks, headings are consistent, and lists are clean.
 
-Python Multi-User Chat App is a real-time chatroom built with Python 3.10+ that allows users on the same local network to connect, choose usernames, and exchange messages instantly.
-The system is structured with separate classes for the server and clients, includes custom exceptions for network errors, and provides a simple Tkinter GUI foe flexibility. This implementation showcases professional practices including modular design, clean architecture, and automated testing with pytest.
+Here’s the ready-to-use version:
 
- Features
+````markdown
+# 💬 Multi-User Chat App
 
-👥 Multi-User Chatroom: Many clients can connect simultaneously
+## 📖 Project Summary
 
-🖥️ GUI Client: Tkinter-based chat interface with user list
+Python Multi-User Chat App is a real-time chatroom built with Python 3.10+ that allows users on the same local network to connect, choose usernames, and exchange messages instantly.  
 
-💻 Console Client: Lightweight terminal version for quick use
+The system is structured with separate classes for the server and clients, includes custom exceptions for network errors, and provides a simple Tkinter GUI for flexibility.  
+This implementation showcases professional practices including modular design, clean architecture, and automated testing with pytest.
 
-🕒 Timestamps: Every message is time-stamped for clarity
+---
 
-🗒️ User List Sync: Real-time updates of connected users
+## ✨ Features
 
-🚫 Duplicate Username Protection: Prevents collisions
+- 👥 **Multi-User Chatroom**: Many clients can connect simultaneously  
+- 🖥️ **GUI Client**: Tkinter-based chat interface with user list  
+- 💻 **Console Client**: Lightweight terminal version for quick use  
+- 🕒 **Timestamps**: Every message is time-stamped for clarity  
+- 🗒️ **User List Sync**: Real-time updates of connected users  
+- 🚫 **Duplicate Username Protection**: Prevents collisions  
+- ⚡ **Threaded Server**: Handles multiple clients concurrently  
+- 🛠️ **Cross-Platform**: Works on Windows, macOS, Linux  
 
-⚡ Threaded Server: Handles multiple clients concurrently
+---
 
-🛠️ Cross-Platform: Works on Windows, macOS, Linux
-
-👥 Team Collaboration
+## 👥 Team Collaboration
 
 Development is organized through GitHub with clear role assignments:
 
-Networking Team → Implement the socket-based server and client communication
+- **Networking Team** → Implement the socket-based server and client communication  
+- **GUI Team** → Design and polish the Tkinter-based interface  
+- **Testing Team** → Write unit tests and document network procedures  
+- **Docs/Media Team** → Prepare README files, reports, and demo videos  
+- **Coordinator** → Oversee integration, consistency, and submission  
 
-GUI Team → Design and polish the Tkinter-based interface
+---
 
-Testing Team → Write unit tests and document network procedures
+## 🎯 Minimum Viable Product (MVP)
 
-Docs/Media Team → Prepare README files, reports, and demo videos
+To achieve the MVP, we deliver:
 
-Coordinator → Oversee integration, consistency, and submission
+- A functioning server that accepts multiple clients, broadcasts messages, and handles disconnects gracefully.  
+- A basic Tkinter client GUI supporting usernames, real-time chat, user lists, and timestamps.  
+- A test suite verifying network stability and error handling, ensuring a reliable, minimal chatroom experience.  
 
-🎯 Minimum Viable Product (MVP)
+---
 
-To achieve the MVP, we will deliver:
+## 🛠️ Installation & Setup
 
-A functioning server that accepts multiple clients, broadcasts messages, and handles disconnects gracefully.
+### 📌 Prerequisites
+- Python 3.10+  
+- `pipenv` (recommended) or `pip`  
 
-A basic Tkinter client GUI supporting usernames, real-time chat, user lists, and timestamps.
+### 🚀 Quick Start
 
-A test suite verifying network stability and error handling, ensuring a reliable, minimal chatroom experience.
-
-🛠️ Installation & Setup
-Prerequisites
-
-Python 3.10+
-
-pipenv (recommended) or pip
-
-Quick Start
-
-Clone the repository:
-
+**Clone the repository:**
+```bash
 git clone https://github.com/yourname/multi-chat-app.git
 cd multi-chat-app
+````
 
+**Install pipenv (if not installed):**
 
-Install pipenv (if not installed):
-
+```bash
 pip install pipenv
+```
 
+**Install dependencies:**
 
-Install dependencies:
-
+```bash
 pipenv install --dev
+```
 
+**Activate the virtual environment:**
 
-Activate the virtual environment:
-
+```bash
 pipenv shell
+```
 
+**Run the server:**
 
-Run the server:
-
+```bash
 python server/server.py
+```
 
+**Run a client (GUI client):**
 
-Run a client:
-
-GUI client:
-
+```bash
 python client/client_gui.py
+```
 
+Enter username when prompted.
 
-Enter username when prompted
+* Type messages in the input box, press Enter to send
+* Messages appear in the chat log with timestamps
+* The right panel shows online users
 
-Type messages in the input box, press Enter to send
+**Run a Console client:**
 
-Messages appear in the chat log with timestamps
+```bash
+python client/client_console.py
+```
 
-The right panel shows online users
+* Enter username on startup
+* Type messages and press Enter to send
+* Type `/quit` or `/exit` to disconnect
 
-Console Client
+---
 
-Enter username on startup
+## 🧩 Module Documentation
 
-Type messages and press Enter to send
+### 🔹 `server.py` – Chat Server
 
-Type /quit or /exit to disconnect
+**Role:** Accepts client connections, manages message broadcasting, and updates user lists.
+**Responsibilities:**
 
-🧩 Module Documentation
-🔹 server.py – Chat Server
+* Handle multiple clients with threads
+* Broadcast messages to all except sender
+* Prevent duplicate usernames
+* Send real-time user list updates
 
-Role: Accepts client connections, manages message broadcasting, and updates user lists.
-Responsibilities:
+### 🔹 `client_gui.py` – GUI Client
 
-Handle multiple clients with threads
+**Role:** Tkinter chat interface with online user panel.
+**Features:**
 
-Broadcast messages to all except sender
+* Chat log with timestamps
+* User list sidebar
+* Local echo for sent messages
+* Smooth scrolling
 
-Prevent duplicate usernames
+### 🔹 `client_console.py` – Console Client
 
-Send real-time user list updates
+**Role:** Minimal terminal client.
+**Features:**
 
-🔹 client_gui.py – GUI Client
+* Quick testing without GUI
+* Local echo of sent messages
+* `/quit` command to exit
 
-Role: Tkinter chat interface with online user panel.
-Features:
+### 🔹 `utils.py` & `helpers.py`
 
-Chat log with timestamps
+**Role:** Shared utilities (timestamp formatting, sanitization).
 
-User list sidebar
+---
 
-Local echo for sent messages
+## 🧪 Testing
 
-Smooth scrolling
+**Run Tests:**
 
-🔹 client_console.py – Console Client
-
-Role: Minimal terminal client.
-Features:
-
-Quick testing without GUI
-
-Local echo of sent messages
-
-/quit command to exit
-
-🔹 utils.py & helpers.py
-
-Role: Shared utilities (timestamp formatting, sanitization).
-
-🧪 Testing
-Run Tests
+```bash
 pipenv run pytest tests/ -v
+```
 
-With Coverage
+**With Coverage:**
+
+```bash
 pipenv run pytest tests/ -v --cov=server --cov=client --cov-report=html
+```
 
+Open `htmlcov/index.html` in a browser to view coverage.
 
-Open htmlcov/index.html in a browser to view coverage.
+---
 
-📺 Demo (Optional)
-Gif: 
+## 📺 Demo (Optional)
 
-Screenshots:
+* **Screenshots:**
+  https://github.com/user-attachments/assets/a37a9024-0294-4549-a2ba-cbcfc7cb4442
 
-https://github.com/user-attachments/assets/a37a9024-0294-4549-a2ba-cbcfc7cb4442
+* **Video Demo:** *(Add link if hosted)*
 
+---
 
+## 🚀 Performance & Specs
 
-GUI chat window
+* **Concurrent Clients:** Handles 50+ connections on a modern laptop
+* **Message Latency:** < 100ms on local network
+* **Memory Usage:** < 50MB per client
+* **Cross-Platform:** Tested on Windows 10, Ubuntu 22.04, macOS Ventura
 
-Console client
+---
 
-Video demo link (if hosted)
+## 🔧 Development & Contribution
 
-🚀 Performance & Specs
+**Setup:**
 
-Concurrent Clients: Handles 50+ connections on a modern laptop
-
-Message Latency: < 100ms on local network
-
-Memory Usage: < 50MB per client
-
-Cross-Platform: Tested on Windows 10, Ubuntu 22.04, macOS Ventura
-
-🔧 Development & Contribution
-Setup
+```bash
 git clone https://github.com/yourname/multi-chat-app.git
 cd multi-chat-app
 pipenv install --dev
 pipenv shell
+```
 
-Future Enhancements
+### 🌟 Future Enhancements
 
-🔒 Add authentication (username/password)
+* 🔒 Add authentication (username/password)
+* 📜 Save chat history to file/database
+* 💬 Private messages (`/w user message`)
+* 🌐 Encrypted communication (TLS)
+* 📱 Mobile client
 
-📜 Save chat history to file/database
+---
 
-💬 Private messages (/w user message)
+## 📄 License
 
-🌐 Encrypted communication (TLS)
+This project is licensed under the **MIT License**.
 
-📱 Mobile client
+```
 
-📄 License
 
-This project is licensed under the MIT License.
-
-Dependencies:
-
-Standard Python library
-
-pytest (for testing)
