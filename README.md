@@ -1,9 +1,3 @@
-Perfect 🚀 I’ll reformat everything properly in **Markdown** so you can just copy-paste it into your `README.md` on GitHub.
-I’ll make sure commands and code are in code blocks, headings are consistent, and lists are clean.
-
-Here’s the ready-to-use version:
-
-````markdown
 # 💬 Multi-User Chat App
 
 ## 📖 Project Summary
@@ -13,7 +7,7 @@ Python Multi-User Chat App is a real-time chatroom built with Python 3.10+ that 
 The system is structured with separate classes for the server and clients, includes custom exceptions for network errors, and provides a simple Tkinter GUI for flexibility.  
 This implementation showcases professional practices including modular design, clean architecture, and automated testing with pytest.
 
----
+
 
 ## ✨ Features
 
@@ -26,7 +20,7 @@ This implementation showcases professional practices including modular design, c
 - ⚡ **Threaded Server**: Handles multiple clients concurrently  
 - 🛠️ **Cross-Platform**: Works on Windows, macOS, Linux  
 
----
+
 
 ## 👥 Team Collaboration
 
@@ -38,7 +32,7 @@ Development is organized through GitHub with clear role assignments:
 - **Docs/Media Team** → Prepare README files, reports, and demo videos  
 - **Coordinator** → Oversee integration, consistency, and submission  
 
----
+
 
 ## 🎯 Minimum Viable Product (MVP)
 
@@ -48,7 +42,7 @@ To achieve the MVP, we deliver:
 - A basic Tkinter client GUI supporting usernames, real-time chat, user lists, and timestamps.  
 - A test suite verifying network stability and error handling, ensuring a reliable, minimal chatroom experience.  
 
----
+
 
 ## 🛠️ Installation & Setup
 
