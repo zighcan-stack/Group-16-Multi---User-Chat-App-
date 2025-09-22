@@ -164,7 +164,8 @@ Open `htmlcov/index.html` in a browser to view coverage.
 ## 📺 Demo (Optional)
 
 * **Screenshots:**
-  https://github.com/user-attachments/assets/a37a9024-0294-4549-a2ba-cbcfc7cb4442
+![Screenshot](https://github.com/user-attachments/assets/a37a9024-0294-4549-a2ba-cbcfc7cb4442)
+
 
 * **Video Demo:** *(Add link if hosted)*
 
